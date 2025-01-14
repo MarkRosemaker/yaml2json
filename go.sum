@@ -1,5 +1,5 @@
-github.com/go-json-experiment/json v0.0.0-20241228065829-3e670832f349 h1:TcKFl0JuLr+dYE/9/SC75xz5QJBQONb2VzruJlO/5s4=
-github.com/go-json-experiment/json v0.0.0-20241228065829-3e670832f349/go.mod h1:BWmvoE1Xia34f3l/ibJweyhrT+aROb/FQ6d+37F0e2s=
+github.com/go-json-experiment/json v0.0.0-20250113184934-d8c9bc4f8854 h1:xIKlfS6x7Jti9Xyga3iYMVusEWtUR2hXbeAf7Q21vho=
+github.com/go-json-experiment/json v0.0.0-20250113184934-d8c9bc4f8854/go.mod h1:BWmvoE1Xia34f3l/ibJweyhrT+aROb/FQ6d+37F0e2s=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405 h1:yhCVgyC4o1eVCa2tZl7eS0r+SDo693bJlVdllGtEeKM=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
 gopkg.in/yaml.v3 v3.0.1 h1:fxVm/GzAzEWqLHuvctI91KS9hhNmmWOoWu0XTYJS7CA=
