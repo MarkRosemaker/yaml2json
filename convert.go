@@ -81,7 +81,8 @@ func encodeToJSON(enc *jsontext.Encoder, n *yaml.Node) error {
 		}
 
 		return enc.WriteToken(jsontext.String(n.Value))
-	// case yaml.AliasNode: // not supported yet (TODO)
+	case yaml.AliasNode:
+		return encodeToJSON(enc, n.Alias)
 	default:
 		return fmt.Errorf("unsupported node kind: %v", n.Kind)
 	}
