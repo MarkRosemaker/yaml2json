@@ -3,6 +3,8 @@ package yaml2json_test
 import (
 	"bytes"
 	_ "embed"
+	"errors"
+	"io"
 	"testing"
 
 	"github.com/MarkRosemaker/yaml2json"
@@ -44,8 +46,8 @@ func TestToJSON_Error(t *testing.T) {
 			},
 		}); err == nil {
 			t.Fatal("expected error")
-		} else if want := "unsupported node kind: 0"; err.Error() != want {
-			t.Fatalf("got: %q, want: %q", err.Error(), want)
+		} else if !errors.Is(err, io.EOF) {
+			t.Fatalf("got: %q, want: %q", err, io.EOF)
 		}
 	})
 
@@ -88,8 +90,8 @@ func TestToJSON_Error(t *testing.T) {
 			},
 		}); err == nil {
 			t.Fatal("expected error")
-		} else if want := "unsupported node kind: 0"; err.Error() != want {
-			t.Fatalf("got: %q, want: %q", err.Error(), want)
+		} else if !errors.Is(err, io.EOF) {
+			t.Fatalf("got: %q, want: %q", err, io.EOF)
 		}
 	})
 
@@ -102,8 +104,8 @@ func TestToJSON_Error(t *testing.T) {
 			},
 		}); err == nil {
 			t.Fatal("expected error")
-		} else if want := "unsupported node kind: 0"; err.Error() != want {
-			t.Fatalf("got: %q, want: %q", err.Error(), want)
+		} else if !errors.Is(err, io.EOF) {
+			t.Fatalf("got: %q, want: %q", err, io.EOF)
 		}
 	})
 }
