@@ -3,12 +3,12 @@ package yaml2json_test
 import (
 	"bytes"
 	_ "embed"
+	"encoding/json/jsontext"
 	"errors"
 	"io"
 	"testing"
 
 	"github.com/MarkRosemaker/yaml2json"
-	"github.com/go-json-experiment/json/jsontext"
 	"gopkg.in/yaml.v3"
 )
 
@@ -113,11 +113,11 @@ func TestToJSON_Error(t *testing.T) {
 func equalJSON(t *testing.T, got, want jsontext.Value) {
 	t.Helper()
 
-	if err := got.Indent("", "\t"); err != nil {
+	if err := got.Indent(); err != nil {
 		t.Fatalf("formatting got: %v", err)
 	}
 
-	if err := want.Indent("", "\t"); err != nil {
+	if err := want.Indent(); err != nil {
 		t.Fatalf("formatting want: %v", err)
 	}
 

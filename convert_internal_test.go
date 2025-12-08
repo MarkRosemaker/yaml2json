@@ -1,11 +1,11 @@
 package yaml2json
 
 import (
+	"encoding/json/jsontext"
 	"errors"
 	"io"
 	"testing"
 
-	"github.com/go-json-experiment/json/jsontext"
 	"gopkg.in/yaml.v3"
 )
 
@@ -14,7 +14,7 @@ func TestEncodeToJSON_Error(t *testing.T) {
 
 	t.Run("sequence node", func(t *testing.T) {
 		enc := jsontext.NewEncoder(io.Discard)
-		if err := enc.WriteToken(jsontext.ObjectStart); err != nil {
+		if err := enc.WriteToken(jsontext.BeginObject); err != nil {
 			t.Fatal(err)
 		}
 
@@ -34,7 +34,7 @@ func TestEncodeToJSON_Error(t *testing.T) {
 
 	t.Run("mapping node", func(t *testing.T) {
 		enc := jsontext.NewEncoder(io.Discard)
-		if err := enc.WriteToken(jsontext.ObjectStart); err != nil {
+		if err := enc.WriteToken(jsontext.BeginObject); err != nil {
 			t.Fatal(err)
 		}
 
